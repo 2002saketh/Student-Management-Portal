@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+   <title>student info</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+ <style>
+  body{
+   background-image: url('/static/newpic.jpg');
+   background-size: cover;
+   text-align: center;
+   font-weight: bold;
+   font-size: larger;
+
+
+  }
+
+
+  a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  }
+
+  a:hover, a:active {
+  background-color: red;
+  }
+  
+  h1{
+    font-family: "Sofia", sans-serif;
+  font-size: 40px;
+  text-shadow: 3px 3px 3px #ababab;
+  }
+
+ </style>
+
+ </head>
+ <body>
+ <h1 style="color: royalblue;" class="font-effect-fire">Student  Details</h1><br>
+
+ <table align="center" cellspacing = "2" cellpadding = "13" border = "10" width="700" >
+
+ <thead>
+ <td>ID</td>
+ <td>Name</td>
+ <td>Email</td>
+ <td>Gender</td>
+ <td>Contact</td>
+ <td>D.O.B</td>
+ <td>Company</td>
+ 
+ </thead>
+ {% for row in rows %}
+ <tr>
+ <td>{{row["id"]}}</td>
+ <td>{{row["name"]}}</td>
+ <td>{{row["email"]}}</td>
+ <td>{{row["gender"]}}</td>
+ <td>{{row["contact"]}}</td>
+ <td>{{row["dob"]}}</td>
+ <td>{{row["address"]}}</td>
+
+ </tr>
+ {% endfor %}   
+ </table>
+ <br><br>
+ <a href="/index">Go back to home page</a>
+ </body>
+ </html> 
+ 

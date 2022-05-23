@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+<style type="text/css">
+  h1{
+  font-family: "Sofia", sans-serif;
+  font-size: 45px;
+  text-shadow: 3px 3px 3px #ababab;
+  }
+</style>
+<h1 align="center" class="font-effect-fire" >Notes</h1>
+<ul class="list-group list-group-flush" id="notes">
+  {% for note in user.notes %}
+  <li class="list-group-item">
+    {{ note.data }}
+    <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </li>
+  {% endfor %}
+</ul>
+<form method="POST">
+  <textarea name="note" id="note" class="form-control"></textarea>
+  <br />
+  <div align="center">
+    <button type="submit" class="btn btn-primary">Add Note</button>
+  </div>
+</form>
+{% endblock %}
